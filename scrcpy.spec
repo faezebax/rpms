@@ -1,4 +1,3 @@
-%global         debug_package       %{nil}
 Name:           scrcpy
 Version:        1.10
 Release:        1%{?dist}
@@ -27,7 +26,8 @@ USB (or over TCP/IP). It does not require any root access.
 cp %{SOURCE1} %{_builddir}/%{name}/
 
 %build
-%meson --strip -Db_lto=true -Dprebuilt_server=%{name}-server-v%{version}.jar
+%meson -Db_lto=true -Dprebuilt_server=%{name}-server-v%{version}.jar
+%meson_build
 
 
 %install
